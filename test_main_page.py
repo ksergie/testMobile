@@ -1,3 +1,8 @@
-def test_guest_can_open_page(browser):
+from .pages.main_page import MainPage
+
+
+def test_open_main_page(browser):
     link = "https://www.lotteryheroes.com/"
-    browser.get(link)
+    page = MainPage(browser, link)
+    page.open()
+    assert page.main_pages_title(), "Play Online Lottery | Bet on global lotteries jackpots | LotteryHeroes"
